@@ -1,26 +1,51 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #EDF2F6;
+  --foreground: #494953;
+  --muted: #6A7EFC;
+  --accent: #FF5656;
+  --secondary-accent: #6A7EFC;
+  --glass: rgba(237, 242, 246, 0.7);
+  --glass-border: rgba(73, 73, 83, 0.1);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-secondary-accent: var(--secondary-accent);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+[data-theme='dark'] {
+  --background: #1a1b23;
+  --foreground: #EDF2F6;
+  --muted: #6A7EFC;
+  --accent: #FF5656;
+  --secondary-accent: #6A7EFC;
+  --glass: rgba(26, 27, 35, 0.7);
+  --glass-border: rgba(237, 242, 246, 0.1);
+}
+
+html {
+  scroll-behavior: smooth !important;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+@layer utilities {
+  .glassmorphism {
+    background: var(--glass);
+    backdrop-filter: blur(7px) !important;
+    -webkit-backdrop-filter: blur(7px);
+    border: 1px solid var(--glass-border);
+  }
 }
