@@ -20,7 +20,7 @@ export default function SectionHeader({ eyebrow, title, className = "" }: Sectio
       >
         {eyebrow}
       </motion.span>
-      
+
       <motion.h2
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -29,7 +29,7 @@ export default function SectionHeader({ eyebrow, title, className = "" }: Sectio
         className="text-3xl md:text-5xl font-bold text-foreground relative inline-block"
       >
         {title}
-        <span className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-1/2 h-1 bg-accent rounded-full opacity-50" />
+        <span className="absolute -bottom-5 left-1/2 -translate-x-1/2 w-1/2 h-1 bg-accent rounded-full opacity-50" />
       </motion.h2>
     </div>
   );

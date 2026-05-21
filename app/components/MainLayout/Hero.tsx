@@ -150,13 +150,6 @@ const socialIcons = [
   },
   {
     id: 3,
-    name: "Twitter",
-    icon: <FaTwitter />,
-    href: "https://www.twitter.com/seif.mamdouh.1257",
-    hover: "hover:text-[#1DA1F2]",
-  },
-  {
-    id: 4,
     name: "LinkedIn",
     icon: <FaLinkedin />,
     href: "https://www.linkedin.com/seif.mamdouh.1257",
