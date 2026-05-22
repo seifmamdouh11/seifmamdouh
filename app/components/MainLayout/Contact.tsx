@@ -6,7 +6,7 @@ import { useLang } from '@/app/hooks/useLang';
 import { contactContent } from '@/app/translations/contact';
 import SectionHeader from '../shared/SectionHeader';
 import { Mail, Phone, MapPin, Send, Loader2, Check } from 'lucide-react';
-import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import { FaFacebook, FaInstagram, FaLinkedin } from 'react-icons/fa';
 
 export default function Contact() {
   const { lang } = useLang();
@@ -36,21 +36,21 @@ export default function Contact() {
       id: 1,
       name: "Facebook",
       icon: <FaFacebook />,
-      href: "https://www.facebook.com/seif.mamdouh.1257",
+      href: "https://www.facebook.com/SeifMamd0uh",
       hover: "hover:text-[#1877F2]",
     },
     {
       id: 2,
       name: "Instagram",
       icon: <FaInstagram />,
-      href: "https://www.instagram.com/seif.mamdouh.1257",
+      href: "https://www.instagram.com/seifmamdouh10/",
       hover: "hover:text-[#E1306C]",
     },
     {
       id: 3,
       name: "LinkedIn",
       icon: <FaLinkedin />,
-      href: "https://www.linkedin.com/seif.mamdouh.1257",
+      href: "https://www.linkedin.com/in/seifmamdouh",
       hover: "hover:text-[#0077B5]",
     }
   ];

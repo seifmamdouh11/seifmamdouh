@@ -7,7 +7,7 @@ import { navItems } from '@/app/translations/navbar';
 import { Laptop, Sun, Moon, Globe, X, Menu } from 'lucide-react';
 import { useState, useEffect, useRef } from 'react';
 import { TbHexagonLetterSFilled } from 'react-icons/tb';
-import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import { FaFacebook, FaInstagram, FaLinkedin } from 'react-icons/fa';
 
 export default function Navbar() {
   const { lang, toggleLang } = useLang();
@@ -266,28 +266,21 @@ const socialIcons = [
     id: 1,
     name: "Facebook",
     icon: <FaFacebook />,
-    href: "https://www.facebook.com/seif.mamdouh.1257",
+    href: "https://www.facebook.com/SeifMamd0uh",
     hover: "hover:text-[#1877F2]",
   },
   {
     id: 2,
     name: "Instagram",
     icon: <FaInstagram />,
-    href: "https://www.instagram.com/seif.mamdouh.1257",
+    href: "https://www.instagram.com/seifmamdouh10/",
     hover: "hover:text-[#E1306C]",
   },
   {
     id: 3,
-    name: "Twitter",
-    icon: <FaTwitter />,
-    href: "https://www.twitter.com/seif.mamdouh.1257",
-    hover: "hover:text-[#1DA1F2]",
-  },
-  {
-    id: 4,
     name: "LinkedIn",
     icon: <FaLinkedin />,
-    href: "https://www.linkedin.com/seif.mamdouh.1257",
+    href: "https://www.linkedin.com/in/seifmamdouh",
     hover: "hover:text-[#0077B5]",
   }
 ];
