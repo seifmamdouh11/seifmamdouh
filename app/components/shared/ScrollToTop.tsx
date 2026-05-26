@@ -43,7 +43,7 @@ export default function ScrollToTop() {
           whileTap={{ scale: 0.9 }}
           aria-label="Scroll to top"
           className="
-            fixed bottom-8 right-8 z-[99999]
+            fixed bottom-8 right-8 z-[99998]
             w-[48px] h-[48px]
             rounded-full
             glassmorphism

@@ -1,5 +1,5 @@
 "use client"
-import { createContext, use, useEffect, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import type { LangContextType, Props } from "../types/types";
 
 export const LangContext = createContext<LangContextType | null>(null);

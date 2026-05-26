@@ -7,7 +7,7 @@ import { useTheme } from '@/app/hooks/useTheme';
 import { useSplash } from '@/app/context/SplashContext';
 import { heroContent } from '@/app/translations/hero';
 import Image from 'next/image';
-import { FaChevronLeft, FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import { FaFacebook, FaInstagram, FaLinkedin } from 'react-icons/fa';
 import { Download } from 'lucide-react';
 import { FaMobile } from 'react-icons/fa6';
 
@@ -67,7 +67,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={splashDone ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.5 }}
-            className="text-4xl sm:text-6xl md:text-7xl font-[700] text-foreground uppercase tracking-wide"
+            className="text-5xl sm:text-6xl md:text-7xl font-[700] text-foreground uppercase tracking-wide"
           >
             {content.name}
           </motion.h1>
@@ -75,7 +75,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={splashDone ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-accent uppercase tracking-wider"
+            className="text-4xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-accent uppercase tracking-wider"
           >
             {content.title}
           </motion.h3>
@@ -109,18 +109,16 @@ export default function Hero() {
                 <span className='absolute opacity-0 ms-0 group-hover:opacity-100 group-hover:ms-2 transition-all duration-300'><Download className='w-5 h-5' /></span>
               </button>
             </a>
-            <a
-              href="#contact"
-              className="w-full sm:w-auto"
+            <button
+              onClick={() => {
+                const el = document.getElementById('contact');
+                if (el) el.scrollIntoView({ behavior: 'smooth' });
+              }}
+              className="w-full sm:w-auto relative group bg-accent border-transparent text-white transition-all duration-300 ps-6 pe-6 py-3 rounded-xl text-base font-semibold hover:pe-11 hover:bg-accent/90 cursor-pointer"
             >
-              <button className="
-              w-full sm:w-auto relative group bg-accent border-transparent text-white transition-all duration-300 ps-6 pe-6 py-3 rounded-xl text-base font-semibold hover:pe-11 hover:bg-accent/90
-                cursor-pointer
-                ">
-                <span className="relative z-10 uppercase tracking-wider">{content.contactMe}</span>
-                <span className='absolute opacity-0 ms-0 group-hover:opacity-100 group-hover:ms-2 transition-all duration-300'><FaMobile className='w-5 h-5' /></span>
-              </button>
-            </a>
+              <span className="relative z-10 uppercase tracking-wider">{content.contactMe}</span>
+              <span className='absolute opacity-0 ms-0 group-hover:opacity-100 group-hover:ms-2 transition-all duration-300 top-1/2 -translate-y-1/2'><FaMobile className='w-5 h-5' /></span>
+            </button>
           </motion.div>
         </motion.div>
 

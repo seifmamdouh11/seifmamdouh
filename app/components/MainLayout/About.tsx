@@ -7,7 +7,7 @@ import { aboutContent } from '@/app/translations/about';
 import SectionHeader from '../shared/SectionHeader';
 import SkillCard from '../shared/SkillCard';
 import StatCounter from '../shared/StatCounter';
-import { Download, MapPin, GraduationCap, Briefcase } from 'lucide-react';
+import { Download, MapPin, GraduationCap } from 'lucide-react';
 import {
     SiReact,
     SiNextdotjs,
@@ -18,8 +18,10 @@ import {
     SiMongodb,
     SiPostgresql,
     SiBootstrap,
-    SiMui
+    SiMui,
+    SiMysql
 } from 'react-icons/si';
+import { IoAnalytics } from 'react-icons/io5';
 
 const skills = [
     { name: "React", icon: <SiReact />, color: "#61DAFB" },
@@ -28,8 +30,10 @@ const skills = [
     { name: "Node.js", icon: <SiNodedotjs />, color: "#339933" },
     { name: "Tailwind", icon: <SiTailwindcss />, color: "#06B6D4" },
     { name: "Bootstrap", icon: <SiBootstrap />, color: "#7952b3" },
-    { name: "MUI", icon: <SiMui />, color: "#7952b3" },
+    { name: "MUI", icon: <SiMui />, color: "#007FFF" },
     { name: "Git", icon: <SiGit />, color: "#F05032" },
+    { name: "MySQL", icon: <SiMysql />, color: "#4bbad8ff" },
+    { name: "PowerBI", icon: <IoAnalytics />, color: "#9c9c39" },
 ];
 
 export default function About() {
@@ -77,12 +81,19 @@ export default function About() {
                             </div>
                         </div>
 
-                        <button className="w-full sm:w-auto self-start relative group text-accent border border-accent/20 transition-all duration-300 px-8 py-3.5 rounded-xl text-base font-semibold hover:pe-12 hover:bg-accent/5 cursor-pointer glassmorphism">
-                            <span className="relative z-10 uppercase tracking-wider">{content.downloadCV}</span>
-                            <span className="absolute opacity-0 ms-0 group-hover:opacity-100 group-hover:ms-2 transition-all duration-300 top-1/2 -translate-y-1/2">
-                                <Download className="w-5 h-5" />
-                            </span>
-                        </button>
+                        <a
+                            href="/Seif Mamdouh CV.pdf"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="w-full sm:w-auto self-start"
+                        >
+                            <button className="w-full sm:w-auto relative group text-accent border border-accent/20 transition-all duration-300 px-8 py-3.5 rounded-xl text-base font-semibold hover:pe-12 hover:bg-accent/5 cursor-pointer glassmorphism">
+                                <span className="relative z-10 uppercase tracking-wider">{content.downloadCV}</span>
+                                <span className="absolute opacity-0 ms-0 group-hover:opacity-100 group-hover:ms-2 transition-all duration-300 top-1/2 -translate-y-1/2">
+                                    <Download className="w-5 h-5" />
+                                </span>
+                            </button>
+                        </a>
                     </motion.div>
 
                     {/* Skills & Stats Column */}
