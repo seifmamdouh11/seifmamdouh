@@ -99,8 +99,9 @@ export default function Navbar() {
   return (
     <>
       <nav
-        className={`z-[100000] w-full fixed top-0 transition-all duration-300 border-b border-foreground/5 ${isScrolled ? 'glassmorphism py-1' : ''
-          }`}
+        className={`z-[100000] w-full fixed top-0 transition-all duration-300 border-b ${
+          showMenu ? 'border-transparent bg-transparent' : 'border-foreground/5'
+        } ${isScrolled ? 'glassmorphism py-1' : 'bg-background/80 backdrop-blur-md md:bg-transparent md:backdrop-blur-none py-2'}`}
       >
         <div className='flex justify-between items-center max-w-7xl mx-auto py-3 px-6 md:px-10'>
 
@@ -109,7 +110,9 @@ export default function Navbar() {
             initial={{ opacity: 0, scale: 0 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
-            className='text-accent text-xl flex items-center gap-2 font-bold'
+            className={`text-accent text-xl flex items-center gap-2 font-bold transition-opacity duration-300 ${
+              showMenu ? 'opacity-0 pointer-events-none' : 'opacity-100'
+            }`}
           >
             <TbHexagonLetterSFilled size={40} />
             <span className="text-foreground hidden md:block">{content.name}</span>
@@ -142,7 +145,9 @@ export default function Navbar() {
             </ul>
 
             {/* Action Buttons */}
-            <div className='flex items-center gap-3 border-l border-foreground/10 pl-5 rtl:border-l-0 rtl:border-r rtl:pl-0 rtl:pr-5'>
+            <div className={`flex items-center gap-3 border-l border-foreground/10 pl-5 rtl:border-l-0 rtl:border-r rtl:pl-0 rtl:pr-5 transition-opacity duration-300 ${
+              showMenu ? 'opacity-0 pointer-events-none' : 'opacity-100'
+            }`}>
               {/* Theme Toggle */}
               <motion.button
                 whileHover={{ scale: 1.1 }}

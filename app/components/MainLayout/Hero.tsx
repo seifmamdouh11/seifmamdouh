@@ -59,7 +59,7 @@ export default function Hero() {
       />
 
       <motion.div
-        className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-8 max-w-7xl w-full px-6 md:px-10 z-10 pt-20 md:pt-0"
+        className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-8 max-w-7xl w-full px-6 md:px-10 z-10 pt-36 pb-12 md:pt-0 md:pb-0"
       >
         {/* content */}
         <motion.div className="flex flex-col gap-6 justify-center items-center text-center md:items-start md:text-start order-2 md:order-1">
