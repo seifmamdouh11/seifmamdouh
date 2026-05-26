@@ -67,7 +67,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={splashDone ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.5 }}
-            className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-foreground uppercase tracking-wide"
+            className="text-4xl sm:text-6xl md:text-7xl font-[700] text-foreground uppercase tracking-wide"
           >
             {content.name}
           </motion.h1>
