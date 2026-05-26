@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/shared/Navbar";
 import Footer from "./components/shared/Footer";
@@ -8,16 +7,9 @@ import ThemeProvider from "./context/ThemeContext";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import SplashScreen from "./components/shared/SplashScreen";
+import ScrollToTop from "./components/shared/ScrollToTop";
+import { SplashProvider } from "./context/SplashContext";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://seifmamdouh.com'),
@@ -68,19 +60,22 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className="h-full antialiased"
     >
       <body className="min-h-full flex flex-col">
-        <SplashScreen />
-        <LanguageProvider>
-          <ThemeProvider>
-            <Navbar />
-            {children}
-            <Footer />
-            <Analytics />
-            <SpeedInsights />
-          </ThemeProvider>
-        </LanguageProvider>
+        <SplashProvider>
+          <SplashScreen />
+          <LanguageProvider>
+            <ThemeProvider>
+              <Navbar />
+              {children}
+              <Footer />
+              <Analytics />
+              <SpeedInsights />
+              <ScrollToTop />
+            </ThemeProvider>
+          </LanguageProvider>
+        </SplashProvider>
       </body>
     </html>
   );

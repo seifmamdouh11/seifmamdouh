@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import "tailwindcss";
 
 :root {
@@ -9,11 +9,11 @@
   --secondary-accent: #6A7EFC;
   --glass: rgba(237, 242, 246, 0.7);
   --glass-border: rgba(73, 73, 83, 0.1);
-  --font-sans: 'Poppins', sans-serif;
+  --site-font-sans: "Poppins", sans-serif;
 }
 
 html[lang="ar"] {
-  --font-sans: 'Cairo', sans-serif;
+  --site-font-sans: "Tajawal", sans-serif;
 }
 
 @theme inline {
@@ -22,8 +22,7 @@ html[lang="ar"] {
   --color-muted: var(--muted);
   --color-accent: var(--accent);
   --color-secondary-accent: var(--secondary-accent);
-  --font-sans: var(--font-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--site-font-sans);
 }
 
 [data-theme='dark'] {
@@ -43,7 +42,7 @@ html {
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-sans), sans-serif;
+  font-family: var(--site-font-sans);
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 

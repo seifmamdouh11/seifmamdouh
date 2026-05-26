@@ -3,9 +3,11 @@
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { TbHexagonLetterSFilled } from 'react-icons/tb';
+import { useSplash } from '@/app/context/SplashContext';
 
 export default function SplashScreen() {
   const [isVisible, setIsVisible] = useState(true);
+  const { setSplashDone } = useSplash();
 
   useEffect(() => {
     // Lock scroll
@@ -15,6 +17,7 @@ export default function SplashScreen() {
     // Lightning-fast and highly performant loading duration (1.2 seconds)
     const timeout = setTimeout(() => {
       setIsVisible(false);
+      setSplashDone(true);
       // Unlock scroll
       document.documentElement.style.overflow = '';
       document.body.style.overflow = '';

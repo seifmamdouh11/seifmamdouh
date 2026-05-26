@@ -15,15 +15,32 @@ export default function Contact() {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
+    setError(null);
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      if (!res.ok) {
+        const data = await res.json();
+        throw new Error(data.error ?? 'Something went wrong.');
+      }
+
       setSubmitted(true);
-      setFormData({ name: "", email: "", message: "" });
-    }, 1500);
+      setFormData({ name: '', email: '', message: '' });
+    } catch (err: unknown) {
+      setError(err instanceof Error ? err.message : 'Something went wrong.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -202,6 +219,13 @@ export default function Contact() {
                       className="bg-foreground/5 border border-foreground/10 rounded-xl px-4 py-3 focus:outline-none focus:border-accent/60 focus:ring-2 focus:ring-accent/20 transition-all duration-300 text-foreground placeholder:text-foreground/40 text-sm md:text-base resize-none"
                     />
                   </div>
+
+                  {/* Error Message */}
+                  {error && (
+                    <p className="text-sm text-red-400 bg-red-400/10 border border-red-400/20 rounded-xl px-4 py-3">
+                      {error}
+                    </p>
+                  )}
 
                   {/* Submit Button */}
                   <button

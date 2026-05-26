@@ -160,8 +160,8 @@ export default function Navbar() {
                     initial={{ opacity: 0, scale: 0 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.5 }}
-                    className={`${isActive ? 'text-accent font-extrabold py-2 rounded-lg' : 'text-foreground/90 font-semibold'
-                      } hover:text-accent text-sm tracking-wider uppercase transition-all duration-200`}
+                    className={`${isActive ? 'text-accent p-2 rounded-lg bg-accent/10' : 'text-foreground/90'
+                      } hover:text-accent text-sm tracking-wider uppercase transition-all duration-300`}
                   >
                     {item.label}
                   </motion.a>
