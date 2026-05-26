@@ -18,7 +18,7 @@ export default function Hero() {
   const content = heroContent[lang];
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden"
+    <section id="home" className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden"
       style={{
         scrollMarginTop: '100px',
       }}
@@ -56,6 +56,7 @@ export default function Hero() {
         alt="Hero Background"
         fill
         className="object-cover z-[-1] absolute opacity-6"
+        sizes="100vw"
       />
 
       <motion.div
@@ -144,6 +145,7 @@ export default function Hero() {
               alt="Profile"
               fill
               className="object-cover scale-110"
+              sizes="(max-width: 768px) 280px, (max-width: 1024px) 320px, 360px"
               priority
             />
           </motion.div>

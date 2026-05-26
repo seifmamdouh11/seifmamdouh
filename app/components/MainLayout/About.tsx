@@ -43,7 +43,7 @@ export default function About() {
     return (
         <section
             id="about"
-            className="relative min-h-screen flex flex-col items-center justify-center py-20 overflow-hidden"
+            className="relative min-h-[100dvh] flex flex-col items-center justify-center py-20 overflow-hidden"
             style={{ scrollMarginTop: '80px' }}
         >
             {/* Background Decor */}

@@ -13,7 +13,7 @@ export default function Projects() {
   return (
     <section 
       id="projects" 
-      className="relative min-h-screen flex flex-col items-center justify-center py-20 overflow-hidden"
+      className="relative min-h-[100dvh] flex flex-col items-center justify-center py-20 overflow-hidden"
       style={{ scrollMarginTop: '80px' }}
     >
       <div className="max-w-7xl w-full px-6 md:px-10 z-10">
@@ -32,6 +32,7 @@ export default function Projects() {
               demoLabel={content.viewProject}
               githubLabel={content.sourceCode}
               delay={index * 0.1}
+              priority={index === 0 || index === 1}
             />
           ))}
         </div>

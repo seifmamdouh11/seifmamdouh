@@ -16,6 +16,7 @@ interface ProjectCardProps {
   demoLabel: string;
   githubLabel: string;
   delay?: number;
+  priority?: boolean;
 }
 
 export default function ProjectCard({
@@ -27,7 +28,8 @@ export default function ProjectCard({
   githubUrl,
   demoLabel,
   githubLabel,
-  delay = 0
+  delay = 0,
+  priority = false
 }: ProjectCardProps) {
   return (
     <motion.div
@@ -44,6 +46,8 @@ export default function ProjectCard({
           alt={title}
           fill
           className="object-cover transition-transform duration-500"
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          priority={priority}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300" />
       </div>

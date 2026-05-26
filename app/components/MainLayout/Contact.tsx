@@ -75,7 +75,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="relative min-h-screen flex flex-col items-center justify-center py-20 overflow-hidden"
+      className="relative min-h-[100dvh] flex flex-col items-center justify-center py-20 overflow-hidden"
       style={{ scrollMarginTop: '80px' }}
     >
       {/* Background Decor */}

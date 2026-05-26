@@ -178,7 +178,7 @@ export default function Navbar() {
               </motion.button>
             </div>
 
-            {/* Hamburger — mobile only */}
+             {/* Hamburger — mobile only */}
             <motion.button
               whileTap={{ scale: 0.85 }}
               onClick={() => setShowMenu(!showMenu)}
@@ -187,11 +187,13 @@ export default function Navbar() {
             >
               <motion.span
                 animate={showMenu
-                  ? { rotate: 45, y: 6, backgroundColor: "var(--color-accent, #FF5656)" }
-                  : { rotate: 0, y: 0, backgroundColor: "currentColor" }
+                  ? { rotate: 45, y: 6 }
+                  : { rotate: 0, y: 0 }
                 }
                 transition={{ duration: 0.3, ease: [0.23, 1, 0.32, 1] }}
-                className="block w-6 h-[2px] rounded-full bg-foreground origin-center"
+                className={`block w-6 h-[2px] rounded-full origin-center transition-colors duration-300 ${
+                  showMenu ? "bg-accent" : "bg-foreground"
+                }`}
               />
               <motion.span
                 animate={showMenu
@@ -199,15 +201,17 @@ export default function Navbar() {
                   : { opacity: 1, scaleX: 1 }
                 }
                 transition={{ duration: 0.2 }}
-                className="block w-4 h-[2px] rounded-full bg-foreground self-start ms-2 origin-left"
+                className="block w-4 h-[2px] rounded-full bg-foreground self-start ms-2 origin-left transition-colors duration-300"
               />
               <motion.span
                 animate={showMenu
-                  ? { rotate: -45, y: -6, backgroundColor: "var(--color-accent, #FF5656)" }
-                  : { rotate: 0, y: 0, backgroundColor: "currentColor" }
+                  ? { rotate: -45, y: -6 }
+                  : { rotate: 0, y: 0 }
                 }
                 transition={{ duration: 0.3, ease: [0.23, 1, 0.32, 1] }}
-                className="block w-6 h-[2px] rounded-full bg-foreground origin-center"
+                className={`block w-6 h-[2px] rounded-full origin-center transition-colors duration-300 ${
+                  showMenu ? "bg-accent" : "bg-foreground"
+                }`}
               />
             </motion.button>
 
@@ -224,7 +228,7 @@ export default function Navbar() {
             animate={{ clipPath: "circle(150% at calc(100% - 52px) 36px)" }}
             exit={{ clipPath: "circle(0% at calc(100% - 52px) 36px)" }}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            className="md:hidden fixed inset-0 z-[99999] bg-background flex flex-col"
+            className="md:hidden fixed inset-x-0 top-0 h-[100dvh] z-[99999] bg-background flex flex-col"
           >
             {/* Top bar inside overlay */}
             <div className="flex items-center justify-between px-6 pt-5 pb-4 border-b border-foreground/5">
