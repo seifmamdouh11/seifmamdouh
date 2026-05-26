@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Poppins, Tajawal } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/shared/Navbar";
 import Footer from "./components/shared/Footer";
@@ -9,6 +10,18 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import SplashScreen from "./components/shared/SplashScreen";
 import ScrollToTop from "./components/shared/ScrollToTop";
 import { SplashProvider } from "./context/SplashContext";
+
+const poppins = Poppins({
+  variable: "--font-poppins",
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+});
+
+const tajawal = Tajawal({
+  variable: "--font-tajawal",
+  subsets: ["arabic"],
+  weight: ["200", "300", "400", "500", "700", "800", "900"],
+});
 
 
 export const metadata: Metadata = {
@@ -60,7 +73,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className="h-full antialiased"
+      className={`${poppins.variable} ${tajawal.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
         <SplashProvider>
