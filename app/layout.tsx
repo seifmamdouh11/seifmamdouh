@@ -63,7 +63,11 @@ export const metadata: Metadata = {
     description: "Explore the professional portfolio of Seif Mamdouh. Building high-performance, responsive web applications with modern technologies.",
     images: ["/profile.jpeg"],
   },
+  other: {
+    freelancehunt: "e203c6ec23b72ae",
+  },
 };
+
 
 export default function RootLayout({
   children,
