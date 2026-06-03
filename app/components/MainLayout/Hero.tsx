@@ -141,7 +141,7 @@ export default function Hero() {
             className="relative z-10 w-full h-full overflow-hidden border-4 border-foreground/20 dark:border-foreground/10 shadow-2xl transition-all duration-300 hover:border-accent cursor-pointer rounded-[60%_40%_30%_70%_/_60%_30%_70%_40%]"
           >
             <Image
-              src="/profile.jpeg"
+              src="/profile2.jpeg"
               alt="Profile"
               fill
               className="object-cover scale-110"
