@@ -69,6 +69,33 @@ export const metadata: Metadata = {
 };
 
 
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Seif Mamdouh",
+  "url": "https://seifmamdouh.com",
+  "image": "https://seifmamdouh.com/profile.jpeg",
+  "sameAs": [
+    "https://www.linkedin.com/in/seifmamdouh",
+    "https://www.facebook.com/SeifMamd0uh",
+    "https://www.instagram.com/seifmamdouh10/"
+  ],
+  "jobTitle": "Web Developer",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Cairo",
+    "addressCountry": "Egypt"
+  },
+  "description": "Explore the professional portfolio of Seif Mamdouh, a Web Developer based in Cairo, Egypt. Specializing in high-performance, responsive web applications built with Next.js, React, and modern tech stack."
+};
+
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Seif Mamdouh | Web Developer",
+  "url": "https://seifmamdouh.com"
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -79,6 +106,16 @@ export default function RootLayout({
       lang="en"
       className={`${poppins.variable} ${tajawal.variable} h-full antialiased`}
     >
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+        />
+      </head>
       <body className="min-h-full flex flex-col">
         <SplashProvider>
           <SplashScreen />

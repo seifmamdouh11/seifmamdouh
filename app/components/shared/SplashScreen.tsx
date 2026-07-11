@@ -29,7 +29,7 @@ export default function SplashScreen() {
       document.documentElement.style.overflow = '';
       document.body.style.overflow = '';
     };
-  }, []);
+  }, [setSplashDone]);
 
   return (
     <AnimatePresence>

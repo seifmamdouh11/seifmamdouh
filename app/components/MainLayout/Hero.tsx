@@ -3,7 +3,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useLang } from '@/app/hooks/useLang';
-import { useTheme } from '@/app/hooks/useTheme';
 import { useSplash } from '@/app/context/SplashContext';
 import { heroContent } from '@/app/translations/hero';
 import Image from 'next/image';
@@ -13,7 +12,6 @@ import { FaMobile } from 'react-icons/fa6';
 
 export default function Hero() {
   const { lang } = useLang();
-  const { theme } = useTheme();
   const { splashDone } = useSplash();
   const content = heroContent[lang];
 

@@ -10,6 +10,7 @@ export default function ThemeProvider({ children }: { children: React.ReactNode 
 
     useEffect(() => {
         const savedTheme = localStorage.getItem('theme') as 'light' | 'dark' || 'dark';
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         setTheme(savedTheme);
         document.documentElement.setAttribute('data-theme', savedTheme);
     }, []);

@@ -15,8 +15,6 @@ import {
     SiNodedotjs,
     SiTailwindcss,
     SiGit,
-    SiMongodb,
-    SiPostgresql,
     SiBootstrap,
     SiMui,
     SiMysql
